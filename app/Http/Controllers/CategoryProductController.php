@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     public function showAll()
     {
         $categories = CategoryProduct::all();

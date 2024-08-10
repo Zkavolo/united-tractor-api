@@ -9,6 +9,11 @@ use Illuminate\Http\UploadedFile;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    
     public function create(Request $request)
     {
         $data = $request->all();
